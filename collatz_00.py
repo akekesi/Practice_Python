@@ -185,8 +185,8 @@ def collatz_plot(n1=1001,n2=10):
 	axs[1].grid(True)
 	plt.show()
 
-# Plot Collatz-Path with gif
-def collatz_path_gif(n,filename="Collatz_Path.gif"):
+# Plot Collatz-Path with gif (to save as .gif: to_save = "save")
+def collatz_path_gif(n,to_save="",filename="Collatz_Path.gif"):
 	A = collatz(n)
 	xt = [A[0],A[-1]]
 	style = "arc3,rad=0.5"
@@ -244,14 +244,15 @@ def collatz_path_gif(n,filename="Collatz_Path.gif"):
 		ax.spines['right'].set_color('none')
 		ax.spines['top'].set_color('none')
 		ax.spines['bottom'].set_position('zero')
-		ax.set_title('Collatz-Path')
+		ax.set_title('Collatz-Path',fontsize=16)
 		cam.snap()
 	animation = cam.animate(interval=1500)
-	animation.save(filename, writer = 'imagemagick')
+	if to_save == "save":
+		animation.save(filename, writer = 'imagemagick')
 	plt.show()
 
-# Plot Collatz-Paths with gif
-def collatz_paths_gif(n,filename='Collatz_Paths.gif'):
+# Plot Collatz-Paths with gif (to save as .gif: to_save = "save")
+def collatz_paths_gif(n,to_save="",filename='Collatz_Paths.gif'):
 	A = collatz_back(n)
 	A = collatz_sort_2(A)
 	A = collatz_sort_rev(A)
@@ -266,14 +267,25 @@ def collatz_paths_gif(n,filename='Collatz_Paths.gif'):
 		plt.text(1,int(max(map(max,A))/3),'Number of Collatz-Paths: '+str(S[i]),fontsize=12)
 		plt.xlabel('Lenght of Collatz-Path')
 		plt.ylabel('Initial Value')
-		plt.title('Collatz-Paths')
+		plt.title('Collatz-Paths',fontsize=16)
 		plt.grid(True)
 		cam.snap()
 	animation = cam.animate(interval=1500)
-	animation.save(filename, writer = 'imagemagick')
+	if to_save == "save":
+		animation.save(filename, writer = 'imagemagick')
 	plt.show()
 
 if __name__ == "__main__":
 	collatz_plot(1001,10)
-	collatz_path_gif(13)
-	collatz_paths_gif(9)
+	print()
+
+# to save as .gif: to_save = "save"
+	to_save = 0
+#	to_save = "save"
+	collatz_path_gif(13,to_save)
+	print()
+	
+# to save as .gif: to_save = "save"
+	to_save = 0
+#	to_save = "save"
+	collatz_paths_gif(9,to_save)
