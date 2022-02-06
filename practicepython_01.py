@@ -8,6 +8,8 @@
 #   2. Print out that many copies of the previous message on separate lines.
 #      (Hint: the string "\n is the same as pressing the ENTER button)
 
+import datetime
+
 
 class Turn:
 
@@ -15,7 +17,8 @@ class Turn:
         self.name = name
         self.age = age
         self.year = year
-        self.text = f"{self.name} will turn {self.year} years old in {self.year - self.age} years."
+        diff = self.year - self.age
+        self.text = f"{self.name} will turn {self.year} years old in {diff} years in {datetime.date.today().year + int(diff)}."
 
     def __str__(self) -> str:
         return self.text
