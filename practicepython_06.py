@@ -16,6 +16,9 @@ def func_palindrome(text: str) -> str:
 
 
 if __name__ == "__main__":
+    # value
     text = ["abcde", "abcba", "abba", "a", "", "abcde edcba", "Aba"]
+
+    # test
     for t in text:
         print(func_palindrome(t))
