@@ -8,14 +8,14 @@ def func_palindrome(text: str) -> str:
     Check wether text is palindrome
     """
     half = int(len(text) / 2)
-    text_1 = text[:half]
-    text_2 = text[::-1][:half]
+    text_1 = text[:half].lower()
+    text_2 = text[::-1][:half].lower()
     if text_1 == text_2:
         return f"{text} is palindrome"
     return f"{text} is not palindrome"
 
 
 if __name__ == "__main__":
-    text = ["abcde", "abcba", "abba", "a", "", "abcde edcba"]
+    text = ["abcde", "abcba", "abba", "a", "", "abcde edcba", "Aba"]
     for t in text:
         print(func_palindrome(t))
