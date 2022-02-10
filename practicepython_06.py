@@ -5,7 +5,7 @@
 
 def func_palindrome(text: str) -> str:
     """
-    Check wether text is palindrome
+    Check whether text is palindrome
     """
     half = int(len(text) / 2)
     text_1 = text[:half].lower()

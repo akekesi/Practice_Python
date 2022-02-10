@@ -31,7 +31,7 @@ class Number:
 
     def func_is_multiple(self) -> int:
         """
-        Check if self.number is multiple of divider
+        Check whether self.number is multiple of divider
         Return:
             0:  not dividable
             1:  dividable
