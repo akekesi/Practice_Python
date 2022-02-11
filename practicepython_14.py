@@ -11,11 +11,10 @@ def func_remove_duplicate(list_old: list) -> list:
     """
     Return list without duplicates
     """
-    length = len(list_old)
     list_new = []
-    for i in range(length):
-        if list_old[i] not in list_new:
-            list_new.append(list_old[i])
+    for l in list_old:
+        if l not in list_new:
+            list_new.append(l)
     return list_new
 
 
