@@ -26,23 +26,48 @@ def func_common(list_1: list, list_2: list) -> list:
     return common
 
 
-if __name__ == "__main__":
-    list_1 = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-    list_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+def func_test(list_1: list, list_2: list) -> None:
+    """
+    Test func_common
+    """
     common = func_common(list_1, list_2)
     common_check = np.intersect1d(list_1, list_2)
     if set(common) == set(common_check):
         print(f"list_1: {list_1}\nlist_2: {list_2}")
         print(f"common: {common}")
+    else:
+        print(f"something wrong")
+
+
+if __name__ == "__main__":
+    # value
+    list_1 = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+    list_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+    # test
+    func_test(list_1, list_2)
+
     print("----------------------------------------------------")
+    # value
     number_min = 0
     number_max = 13
     list_min = 0
     list_max = 13
     list_1 = [random.randint(number_min, number_max) for _ in range(random.randint(list_min, list_max))]
     list_2 = [random.randint(number_min, number_max) for _ in range(random.randint(list_min, list_max))]
-    common = func_common(list_1, list_2)
-    common_check = np.intersect1d(list_1, list_2)
-    if set(common) == set(common_check):
-        print(f"list_1: {list_1}\nlist_2: {list_2}")
-        print(f"common: {common}")
+
+    # test
+    func_test(list_1, list_2)
+
+    print("----------------------------------------------------")
+    # value
+    number_min = 0
+    number_max = 13
+    list_min = 0
+    list_max_1 = 13
+    list_max_2 = 1
+    list_1 = [random.randint(number_min, number_max) for _ in range(random.randint(list_min, list_max_1))]
+    list_2 = [random.randint(number_min, number_max) for _ in range(random.randint(list_min, list_max_2))]
+
+    # test
+    func_test(list_1, list_2)
