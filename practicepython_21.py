@@ -15,9 +15,12 @@ def func_write_to_txt(text_to_write: str, dir_name="", file_name="text") -> None
     """
     suffix = ".txt"
     path = os.path.join(dir_name, file_name + suffix)
-    with open(path, 'w') as f:
-        f.write(text_to_write)
-        print(f"{path} saved")
+    try:
+        with open(path, 'w') as f:
+            f.write(text_to_write)
+            print(f"{path} saved")
+    except OSError as e:
+        print(f"{path} can't be saved\n{e}")
 
 
 if __name__ == "__main__":
@@ -31,6 +34,7 @@ if __name__ == "__main__":
     # test
     func_write_to_txt(text_to_write)
     func_write_to_txt(text_to_write, dir_name=dir_name, file_name=file_name)
+    func_write_to_txt(text_to_write, dir_name=r"\wrong\path", file_name=file_name)
 
     # delete txt
     if delete_txt:
