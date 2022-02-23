@@ -12,7 +12,7 @@
 #      I talked a little bit about it in this post.
 
 
-def func_read_file(path: str) -> str:
+def func_read_file(path: str) -> list:
     """
     Read text and return lines as list
     """
@@ -22,6 +22,7 @@ def func_read_file(path: str) -> str:
     except OSError as e:
         text_error = f"something wrong\n{e}"
         print(text_error)
+        return []
 
 
 def func_count_name(list_to_count: list) -> dict:
