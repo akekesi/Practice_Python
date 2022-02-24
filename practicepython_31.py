@@ -61,7 +61,7 @@ class Hangman:
             self.func_pos_in_string()
             self.func_set()
             print(f"{self.board}")
-            if "".join(self.board) == self.password:
+            if "".join(self.board) == self.password: # if "_" not in self.board: # would be better
                 print("---WIN---")
                 print(f"rounds: {r}")
                 print(f"password: {''.join(self.board)}")
