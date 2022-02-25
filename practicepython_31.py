@@ -59,15 +59,18 @@ class Hangman:
             r += 1
             self.func_guess(rounds=r)
             self.func_pos_in_string()
+            if self.guesses[-1] == self.password:
+                text_win = self.func_print(r)
+                print(text_win)
+                return True
             self.func_set()
             print(f"{self.board}")
-            if "".join(self.board) == self.password: # if "_" not in self.board: # would be better
-                print("---WIN---")
-                print(f"rounds: {r}")
-                print(f"password: {''.join(self.board)}")
+            if "_" not in self.board:
+                text_win = self.func_print(r)
+                print(text_win)
                 return True
-        print("---LOSE---")
-        print(f"rounds: {r}")
+        text_win = self.func_print(r, win=False)
+        print(text_win)
         return False
 
     def func_new_game(self, password=False, rounds=float("inf")) -> None:
@@ -79,8 +82,15 @@ class Hangman:
         self.board = ["_"] * len(self.password)
         self.guesses = []
         self.pos = []
-        print(rounds)
         self.func_game(rounds=rounds)
+
+    def func_print(self, rounds: int,  win=True) -> str:
+        """
+        
+        """
+        if win:
+            return f"---WIN---\nrounds: {rounds}\npassword: {self.password}"
+        return f"---LOSE---\nrounds: {rounds}"
 
 
 if __name__ == "__main__":
