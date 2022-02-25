@@ -86,7 +86,7 @@ class Hangman:
 
     def func_print(self, rounds: int,  win=True) -> str:
         """
-        
+        Return win/lose text
         """
         if win:
             return f"---WIN---\nrounds: {rounds}\npassword: {self.password}"
