@@ -27,6 +27,12 @@ class Birthday:
         date = "birthday: "
         self.birthday[name] = input(date)
 
+    def func_append_dict(self, dict_to_append: dict) -> None:
+        """
+        Append dictionary to self.birthday
+        """
+        self.birthday.update(dict_to_append)
+
     def func_print_names(self) -> None:
         """
         Print the names from dictionary
@@ -51,6 +57,12 @@ class Birthday:
 
 
 if __name__ == "__main__":
+    # value
+    dict_to_append = {
+        "Eugene Paul Wigner": "17/11/1902",
+        "John von Neumann": "28/12/1903"
+    }
+
     # test
     birthday = Birthday()
     birthday.func_new()
@@ -58,3 +70,6 @@ if __name__ == "__main__":
     birthday.func_print_birthday()
     birthday.func_print_birthday("otto")
     birthday.func_print_birthday("")
+    birthday.func_append_dict(dict_to_append)
+    birthday.func_print_names()
+    birthday.func_print_birthday("Eugene Paul Wigner")
