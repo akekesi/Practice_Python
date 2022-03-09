@@ -13,7 +13,7 @@ from practicepython_33 import Birthday
 
 def func_read_json(path: str) -> dict:
     """
-    Write data to json
+    Read data from json
     """
     with open(path) as f:
         return json.load(f)
