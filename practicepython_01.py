@@ -18,7 +18,7 @@ class Turn:
         self.age = age
         self.year = year
         diff = self.year - self.age
-        self.text = f"{self.name} will turn {self.year} years old in {diff} years in {datetime.date.today().year + int(diff)}."
+        self.text = f"{self.name} will turn {self.year} years old in {diff} years, in {datetime.date.today().year + int(diff)}."
 
     def __str__(self) -> str:
         return self.text
