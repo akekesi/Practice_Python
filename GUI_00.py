@@ -15,7 +15,7 @@ class GUI:
         # value
         self.value_1 = "a.bc"
         self.value_2 = "1.23"
-        self.path_1 = r"C:\Users\kekesati\OneDrive\Py_json\00_automated_simulation\02_python\GUI_00_file.txt"
+        self.path_1 = r"GUI_00_file.txt"
 
         # frame
         self.padx_frame_in = 10 
